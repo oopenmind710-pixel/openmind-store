@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="60">
+<title>OpenMind — Dashboard Live</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #00d4aa; padding: 20px; }
+h1 { font-size: 1.4rem; margin-bottom: 4px; }
+.subtitle { color: #555; font-size: 0.8rem; margin-bottom: 24px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.stat { background: #111; border: 1px solid #1a1a1a; border-radius: 8px; padding: 16px; }
+.stat .val { font-size: 2rem; font-weight: bold; color: #fff; }
+.stat .label { font-size: 0.75rem; color: #555; margin-top: 4px; }
+.log { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+.log h2 { font-size: 0.9rem; color: #00d4aa; margin-bottom: 12px; border-bottom: 1px solid #1a1a1a; padding-bottom: 8px; }
+.entry { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #111; font-size: 0.8rem; }
+.entry:last-child { border: none; }
+.badge { border-radius: 4px; padding: 2px 8px; font-size: 0.7rem; white-space: nowrap; }
+.badge.content { color: #4dabf7; border: 1px solid #4dabf7; }
+.badge.skills { color: #69db7c; border: 1px solid #69db7c; }
+.badge.templates { color: #ffd43b; border: 1px solid #ffd43b; }
+.badge.pitches { color: #f783ac; border: 1px solid #f783ac; }
+.entry .title { color: #ccc; flex: 1; }
+.entry .price { color: #00d4aa; white-space: nowrap; }
+.cron-item { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.8rem; border-bottom: 1px solid #111; }
+.cron-item:last-child { border: none; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; background: #00d4aa; box-shadow: 0 0 6px #00d4aa; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.store-link { display: inline-block; margin-top: 16px; background: #00d4aa; color: #000; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>🧠 OpenMind — Dashboard</h1>
+<p class="subtitle">Auto-refresh 60s · Agent autonome actif</p>
+
+<div class="grid">
+  <div class="stat"><div class="val">18</div><div class="label">Livrables créés</div></div>
+  <div class="stat"><div class="val">~1 600€</div><div class="label">Valeur portefeuille</div></div>
+  <div class="stat"><div class="val">4</div><div class="label">Produits en vente</div></div>
+  <div class="stat"><div class="val">0</div><div class="label">Commandes</div></div>
+</div>
+
+<div class="log">
+  <h2>⚡ Derniers livrables</h2>
+  <div class="entry"><span class="badge skills">skill</span><span class="title">lead-tracker — CRM pipeline freelance CLI</span><span class="price">9.99€</span></div>
+  <div class="entry"><span class="badge content">article</span><span class="title">AI Automation for Small Businesses 2026 (EN, 1550 mots)</span><span class="price">45-100€</span></div>
+  <div class="entry"><span class="badge pitches">pitch</span><span class="title">Pitch Agent IA — LinkedIn DM + Email ROI + Malt</span><span class="price">890€+</span></div>
+  <div class="entry"><span class="badge templates">template</span><span class="title">Mission RH Consultant Kit — 30/60/90j + KPIs</span><span class="price">29€</span></div>
+  <div class="entry"><span class="badge skills">skill</span><span class="title">invoice-generator — Factures Markdown+HTML FR</span><span class="price">9.99€</span></div>
+  <div class="entry"><span class="badge templates">template</span><span class="title">Landing Page Freelance IA — Générateur HTML auto</span><span class="price">19€</span></div>
+  <div class="entry"><span class="badge pitches">pitch</span><span class="title">Proposition Agences Web — 3 formules 1500/3500/6000€</span><span class="price">1 500€+</span></div>
+  <div class="entry"><span class="badge content">article</span><span class="title">Automatiser sa comptabilité freelance IA 2026 (FR)</span><span class="price">30-80€</span></div>
+</div>
+
+<div class="log">
+  <h2>🤖 Agents actifs</h2>
+  <div class="cron-item"><span><span class="dot"></span>Production livrables</span><span style="color:#555">toutes les 5 min</span></div>
+  <div class="cron-item"><span><span class="dot"></span>Rapport WhatsApp</span><span style="color:#555">toutes les 20 min</span></div>
+  <div class="cron-item"><span><span class="dot"></span>Monitoring commandes Gmail</span><span style="color:#555">toutes les 30 min</span></div>
+</div>
+
+<a href="index.html" class="store-link">🛒 Voir le store →</a>
+</body>
+</html>
