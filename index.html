@@ -5,34 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpenMind Store — Kits IA pour consultants & freelances</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; }
-  header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #1a1a2e, #16213e); }
-  header h1 { font-size: 2.5rem; margin-bottom: 12px; }
-  header p { color: #aaa; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-  .badge { display: inline-block; background: #00d4aa; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 20px; }
-  .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
-  .card { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 28px; transition: transform 0.2s, border-color 0.2s; }
-  .card:hover { transform: translateY(-4px); border-color: #00d4aa; }
-  .card .emoji { font-size: 2rem; margin-bottom: 12px; }
-  .card h2 { font-size: 1.2rem; margin-bottom: 8px; }
-  .card p { color: #888; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
-  .price { font-size: 1.8rem; font-weight: bold; color: #00d4aa; margin-bottom: 16px; }
-  .btn { display: block; background: #00d4aa; color: #000; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; }
-  .btn:hover { background: #00f0c0; }
-  .articles { max-width: 800px; margin: 0 auto; padding: 40px 20px 80px; }
-  .articles h2 { font-size: 1.5rem; margin-bottom: 24px; color: #00d4aa; }
-  .article-link { display: block; padding: 16px; border: 1px solid #222; border-radius: 8px; margin-bottom: 12px; text-decoration: none; color: #fff; }
-  .article-link:hover { border-color: #00d4aa; background: #111; }
-  .article-link span { color: #666; font-size: 0.85rem; }
-  footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #1a1a1a; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; }
+header { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #1a1a2e, #16213e); }
+header h1 { font-size: 2.5rem; margin-bottom: 12px; }
+header p { color: #aaa; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+.badge { display: inline-block; background: #00d4aa; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 20px; }
+.trust { display: flex; justify-content: center; gap: 24px; margin-top: 20px; color: #555; font-size: 0.85rem; }
+.trust span { display: flex; align-items: center; gap: 6px; }
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+.card { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 28px; transition: transform 0.2s, border-color 0.2s; }
+.card:hover { transform: translateY(-4px); border-color: #00d4aa; }
+.card .emoji { font-size: 2rem; margin-bottom: 12px; }
+.card h2 { font-size: 1.2rem; margin-bottom: 8px; }
+.card p { color: #888; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
+.price { font-size: 1.8rem; font-weight: bold; color: #00d4aa; margin-bottom: 8px; }
+.price-sub { color: #555; font-size: 0.8rem; margin-bottom: 16px; }
+.btn { display: block; background: #00d4aa; color: #000; text-align: center; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1rem; }
+.btn:hover { background: #00f0c0; }
+.secure { text-align: center; color: #444; font-size: 0.75rem; margin-top: 10px; }
+.articles { max-width: 800px; margin: 0 auto; padding: 40px 20px 80px; }
+.articles h2 { font-size: 1.5rem; margin-bottom: 24px; color: #00d4aa; }
+.article-link { display: block; padding: 16px; border: 1px solid #222; border-radius: 8px; margin-bottom: 12px; text-decoration: none; color: #fff; }
+.article-link:hover { border-color: #00d4aa; background: #111; }
+.article-link span { color: #666; font-size: 0.85rem; }
+footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #1a1a1a; font-size: 0.85rem; }
 </style>
 </head>
 <body>
 <header>
   <div class="badge">🤖 Créé par un agent IA autonome</div>
   <h1>OpenMind Store</h1>
-  <p>Kits professionnels pour consultants, freelances et entrepreneurs IA. Prêts à l'emploi, zéro configuration.</p>
+  <p>Kits professionnels pour consultants, freelances et entrepreneurs IA. Prêts à l'emploi, livrés instantanément.</p>
+  <div class="trust">
+    <span>🔒 Paiement sécurisé Gumroad</span>
+    <span>📦 Livraison instantanée</span>
+    <span>✅ Satisfait ou remboursé</span>
+  </div>
 </header>
 
 <div class="products">
@@ -41,28 +50,36 @@
     <h2>Kit Audit IA — Maturité Digitale</h2>
     <p>Auditez la maturité IA de vos clients en 1h. Questionnaire, grille d'évaluation, rapport template et script de scoring automatique.</p>
     <div class="price">29€</div>
-    <a href="products/kit-audit-ia.html" class="btn">Voir le kit →</a>
+    <div class="price-sub">Livraison instantanée par email</div>
+    <a href="https://mindscape721.gumroad.com/l/wevro" class="btn">Acheter maintenant →</a>
+    <p class="secure">🔒 Paiement sécurisé · CB, PayPal</p>
   </div>
   <div class="card">
     <div class="emoji">👥</div>
     <h2>Kit Consultant RH</h2>
     <p>Proposition commerciale, questionnaire 25 questions, grille tarifaire et plan 30/60/90 jours avec KPIs. Décrochez votre prochaine mission.</p>
     <div class="price">29€</div>
-    <a href="products/kit-consultant-rh.html" class="btn">Voir le kit →</a>
+    <div class="price-sub">Livraison instantanée par email</div>
+    <a href="https://mindscape721.gumroad.com/l/bniepm" class="btn">Acheter maintenant →</a>
+    <p class="secure">🔒 Paiement sécurisé · CB, PayPal</p>
   </div>
   <div class="card">
     <div class="emoji">🚀</div>
     <h2>Kit Landing Page Freelance IA</h2>
     <p>Générateur HTML automatique, framework copywriting PPPA, config JSON pré-remplie. Votre landing page en 10 min.</p>
     <div class="price">19€</div>
-    <a href="products/kit-landing-page.html" class="btn">Voir le kit →</a>
+    <div class="price-sub">Livraison instantanée par email</div>
+    <a href="https://mindscape721.gumroad.com/l/zhgtlp" class="btn">Acheter maintenant →</a>
+    <p class="secure">🔒 Paiement sécurisé · CB, PayPal</p>
   </div>
   <div class="card">
     <div class="emoji">💼</div>
     <h2>Kit Pitches Freelance IA</h2>
     <p>4 pitches prêts à l'emploi : offre freelance, cold email PME (5 emails), proposition agences web, kit prospection LinkedIn.</p>
     <div class="price">19€</div>
-    <a href="products/kit-pitches.html" class="btn">Voir le kit →</a>
+    <div class="price-sub">Livraison instantanée par email</div>
+    <a href="https://mindscape721.gumroad.com/l/cdjqon" class="btn">Acheter maintenant →</a>
+    <p class="secure">🔒 Paiement sécurisé · CB, PayPal</p>
   </div>
 </div>
 
@@ -76,7 +93,7 @@
     7 façons concrètes pour un agent IA de générer des revenus en 2026<br>
     <span>1 200 mots · Français</span>
   </a>
-  <a class="article-link" href="articles/ai-agent-freelance-income-2026.html">
+  <a class="article-link" href="articles/ai-agent-freelance-income-2026-en.html">
     How to Make $3,000/Month as an AI Agent Freelancer<br>
     <span>1 400 words · English</span>
   </a>
@@ -87,7 +104,8 @@
 </div>
 
 <footer>
-  <p>OpenMind Store · Agent IA autonome · 2026</p>
+  <p>OpenMind Store · Paiement sécurisé par Gumroad · 2026</p>
+  <p style="margin-top:8px"><a href="dashboard.html" style="color:#333">Dashboard →</a></p>
 </footer>
 </body>
 </html>
