@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comment automatiser sa veille avec l'IA en 2026 (guide complet)</title>
+<style>body{font-family:-apple-system,sans-serif;background:#0a0a0a;color:#ddd;max-width:800px;margin:0 auto;padding:40px 20px;line-height:1.7}h1,h2{color:#fff}h2{margin-top:2em;color:#00d4aa}a{color:#00d4aa}p{margin:1em 0}.back{display:inline-block;margin-bottom:30px;color:#00d4aa;text-decoration:none}</style>
+</head><body>
+<a class="back" href="../index.html">← Retour au store</a>
+<h1>Comment automatiser sa veille avec l'IA en 2026 (guide complet)</h1>
+
+<strong>Temps de lecture :</strong> 8 minutes  
+<strong>Niveau :</strong> Débutant à intermédiaire  
+<strong>Mis à jour :</strong> Février 2026
+
+<p>---</p>
+
+<p>La veille concurrentielle et technologique prend en moyenne <strong>5 à 10 heures par semaine</strong> à un professionnel sérieux. En 2026, l'IA permet de réduire ce temps à moins de 30 minutes — sans sacrifier la qualité. Ce guide vous montre exactement comment faire.</p>
+
+<p>---</p>
+
+<h2>Pourquoi votre veille actuelle vous coûte trop cher</h2>
+
+<p>Vous avez probablement une liste de newsletters, de flux RSS, d'alertes Google et de profils LinkedIn à consulter chaque matin. Le problème : <strong>vous faites le travail d'un algorithme</strong>.</p>
+
+<p>Trier, filtrer, résumer, prioriser — ce sont des tâches répétitives et cognitives que les LLMs modernes effectuent mieux que vous, plus vite, et sans se fatiguer.</p>
+
+<p>Le coût caché de cette veille manuelle :</p>
+<ul><li><strong>Temps</strong> : 5-10h/semaine × 50 semaines = 250 à 500h/an</li>
+<li><strong>Charge cognitive</strong> : fatigue décisionnelle en début de journée</li>
+<li><strong>Manques</strong> : vous ratez des signaux faibles parce que vous scannez trop vite</li>
+
+<p>---</p>
+
+<h2>L'architecture d'une veille IA en 2026</h2>
+
+<p>Voici le stack minimal pour automatiser 80% de votre veille :</p>
+
+<h3>1. Collecte automatique des sources</h3>
+
+<strong>Outils recommandés :</strong>
+<li><strong>Feedly</strong> (plan Pro ou via API) — centralise vos RSS, LinkedIn, Reddit, Twitter/X</li>
+<li><strong>Perplexity Spaces</strong> — surveille des thématiques définies en langage naturel</li>
+<li><strong>Make.com</strong> (ou n8n en self-hosted) — orchestrateur no-code gratuit</li>
+
+<strong>Configuration en 15 minutes :</strong>
+<p>1. Créez un espace Perplexity dédié à votre domaine (ex: "IA et automatisation en France")</p>
+<p>2. Connectez vos 5-10 sources clés dans Feedly</p>
+<p>3. Créez une alerte Make qui agrège les nouveaux articles chaque matin à 7h00</p>
+
+<h3>2. Résumé et scoring par LLM</h3>
+
+<p>C'est le cœur du système. Chaque article collecté est envoyé à un LLM avec ce prompt :</p>
+
+<p>```</p>
+<p>Analyse cet article et retourne un JSON avec :</p>
+<li>titre: string</li>
+<li>resume: 3 phrases max</li>
+<li>pertinence: score 1-10 (pour [VOTRE SECTEUR])</li>
+<li>action: string (ce que je devrais faire avec cette info)</li>
+<li>tags: array de 3 mots-clés</li></ul>
+
+<p>Article: [CONTENU]</p>
+<p>```</p>
+
+<strong>Coût réel :</strong> avec GPT-4o-mini ou Claude Haiku, analyser 50 articles/jour coûte environ <strong>0,05€</strong>. Soit 1,50€/mois.
+
+<h3>3. Digest personnalisé et livraison</h3>
+
+<p>Les articles avec `pertinence >= 7` sont compilés en un digest quotidien envoyé par email ou Slack.</p>
+
+<strong>Template de digest :</strong>
+
+<p>```</p>
+<p>🌅 Veille du [DATE] — [N] articles sélectionnés sur [M] analysés</p>
+
+<p>🔴 URGENT (pertinence 9-10)</p>
+<p>→ [TITRE] — [RÉSUMÉ] — [ACTION]</p>
+
+<p>🟡 À LIRE (pertinence 7-8)</p>
+<p>→ [TITRE] — [RÉSUMÉ]</p>
+
+<p>📌 EN STOCK (à lire si temps)</p>
+<p>→ [TITRE] × [N articles]</p>
+<p>```</p>
+
+<p>---</p>
+
+<h2>Les 3 usages les plus rentables</h2>
+
+<h3>Usage 1 : Veille concurrentielle produit</h3>
+
+<p>Suivez les pages de prix, les changelogs et les annonces de vos concurrents. Un LLM peut détecter les changements significatifs et vous alerter uniquement quand quelque chose change vraiment.</p>
+
+<strong>Gain estimé :</strong> 3h/semaine → 20 minutes.
+
+<h3>Usage 2 : Détection d'opportunités commerciales</h3>
+
+<p>Configurez des alertes sur des signaux d'achat : offres d'emploi publiées par des prospects ("recherche consultant IA"), levées de fonds récentes, lancements de produits.</p>
+
+<strong>Gain estimé :</strong> identifier 3x plus d'opportunités en 2x moins de temps.
+
+<h3>Usage 3 : Curation de contenu pour vos réseaux</h3>
+
+<p>Votre veille devient automatiquement une source de posts LinkedIn ou Twitter. Le LLM génère un angle éditorial pour chaque article pertinent.</p>
+
+<strong>Prompt de curation :</strong>
+<p>```</p>
+<p>À partir de cet article, génère un post LinkedIn percutant (150 mots max) </p>
+<p>avec un angle contre-intuitif ou pratique. Ton : expert accessible, </p>
+<p>pas de jargon inutile.</p>
+<p>```</p>
+
+<p>---</p>
+
+<h2>Le workflow complet en 5 étapes</h2>
+
+<p>```</p>
+<p>[7h00] Make.com collecte → Feedly + Perplexity + Reddit API</p>
+<p>         ↓</p>
+<p>[7h05] Batch LLM → score pertinence + résumé (GPT-4o-mini)</p>
+<p>         ↓</p>
+<p>[7h10] Filtre automatique → garder pertinence ≥ 7</p>
+<p>         ↓</p>
+<p>[7h15] Génération digest → template Markdown → email/Slack</p>
+<p>         ↓</p>
+<p>[7h30] VOUS lisez 20 minutes → 0 décision de tri à faire</p>
+<p>```</p>
+
+<p>---</p>
+
+<h2>Coût total du système</h2>
+
+<p>| Composant | Option gratuite | Option payante |</p>
+<p>|-----------|----------------|----------------|</p>
+<p>| Collecte RSS | Feedly Free (100 sources) | Feedly Pro (12€/mois) |</p>
+<p>| Orchestration | n8n self-hosted | Make.com 9€/mois |</p>
+<p>| LLM | OpenRouter (modèles gratuits) | GPT-4o-mini (~2€/mois) |</p>
+<p>| Livraison | Gmail / Slack gratuit | — |</p>
+<p>| <strong>Total</strong> | <strong>0€/mois</strong> | <strong>~23€/mois</strong> |</p>
+
+<p>---</p>
+
+<h2>Mise en place : par où commencer ?</h2>
+
+<strong>Semaine 1 — Base :</strong>
+<p>1. Installez n8n ou créez un compte Make.com</p>
+<p>2. Listez vos 10 sources de veille actuelles</p>
+<p>3. Configurez un premier flux RSS → résumé LLM → email</p>
+
+<strong>Semaine 2 — Optimisation :</strong>
+<p>4. Affinez le prompt de scoring pour votre secteur</p>
+<p>5. Ajoutez le digest quotidien avec tri par pertinence</p>
+<p>6. Mesurez le temps gagné</p>
+
+<strong>Semaine 3 — Avancé :</strong>
+<p>7. Ajoutez la curation automatique pour LinkedIn</p>
+<p>8. Connectez vos alertes concurrentielles</p>
+<p>9. Documentez votre workflow pour le déléguer ou le vendre</p>
+
+<p>---</p>
+
+<h2>Ce que disent ceux qui l'ont mis en place</h2>
+
+<em>"Je passais 2 heures chaque matin sur Feedly et Twitter. Maintenant j'ai un email à 7h30 avec 8 articles, tous pertinents. Je lis en 20 minutes et je commence ma journée l'esprit clair."</em>
+<p>— Consultant indépendant, secteur fintech</p>
+
+<em>"On a monté le système pour notre équipe de 5 personnes. Chacun reçoit une veille personnalisée sur son domaine. Le ROI a été immédiat."</em>
+<p>— Responsable innovation, PME industrielle</p>
+
+<p>---</p>
+
+<h2>Conclusion</h2>
+
+<p>L'automatisation de la veille n'est plus un luxe réservé aux grandes entreprises. Avec 2 à 3h d'installation initiale et moins de 25€/mois, vous récupérez 5 à 10 heures par semaine — soit <strong>200 à 400h/an</strong>.</p>
+
+<p>Ce temps, vous pouvez le réinvestir dans ce qui crée vraiment de la valeur : la réflexion stratégique, les conversations clients, la création.</p>
+
+<strong>La prochaine étape ?</strong> Choisissez UN de vos outils de veille actuels et connectez-le à un LLM cette semaine. Pas besoin du système complet d'un coup — une amélioration à la fois.
+
+<p>---</p>
+
+<p>*Besoin d'aide pour mettre en place ce système dans votre contexte ?  </p>
+<p>→ [Lien vers votre offre de service / formulaire de contact]*</p>
+
+<p>---</p>
+
+<strong>Tags SEO :</strong> automatisation veille IA, veille concurrentielle automatique, LLM productivité, make.com n8n intelligence artificielle, veille technologique 2026
+</body></html>
