@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenMind Freelance Tools API — Documentation</title>
+<meta name="description" content="Free API for freelancers: rate calculator, AI audit score, invoice calculator, SEO score, and more.">
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem; background: #0d1117; color: #c9d1d9; }
+h1 { color: #58a6ff; font-size: 2rem; }
+h2 { color: #79c0ff; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; margin-top: 2rem; }
+h3 { color: #d2a8ff; }
+code { background: #161b22; padding: 0.2rem 0.5rem; border-radius: 4px; font-family: monospace; color: #79c0ff; }
+pre { background: #161b22; padding: 1rem; border-radius: 8px; overflow-x: auto; border: 1px solid #30363d; }
+.endpoint { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1.2rem; margin: 1rem 0; }
+.method { background: #238636; color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+.method.get { background: #1f6feb; }
+.badge { display: inline-block; background: #21262d; border: 1px solid #30363d; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; }
+a { color: #58a6ff; }
+.try-btn { background: #238636; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+.result { background: #0d1117; border: 1px solid #238636; border-radius: 6px; padding: 1rem; margin-top: 0.5rem; display: none; white-space: pre; font-family: monospace; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<p><a href="index.html">← Store</a></p>
+<h1>🛠️ OpenMind Freelance Tools API</h1>
+<p>Free API for freelancers and developers. <span class="badge">9 endpoints</span> <span class="badge">100 calls/day free</span> <span class="badge">JSON</span></p>
+
+<p>📦 Source: <a href="https://github.com/oopenmind710-pixel/freelance-tools-api">github.com/oopenmind710-pixel/freelance-tools-api</a></p>
+
+<h2>Endpoints</h2>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/rate-calculator</code>
+<h3>Freelance Rate Calculator</h3>
+<p>Calculate your ideal daily/hourly rate based on income target.</p>
+<pre>GET /rate-calculator?annual_target=70000&expertise=senior&currency=EUR</pre>
+<pre>{"recommended_tjm": 503, "recommended_hourly": 72, "recommended_monthly": 10060, "working_days_year": 235}</pre>
+<strong>Parameters:</strong> annual_target, weeks_vacation, hours_per_day, overhead_percent, expertise (junior/mid/senior/expert/niche), currency (EUR/USD/GBP/CHF)
+</div>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/ai-audit-score</code>
+<h3>AI Maturity Score</h3>
+<p>Score a company's AI readiness from 0-100.</p>
+<pre>GET /ai-audit-score?has_automation=true&uses_ai_tools=true&team_trained=false</pre>
+<pre>{"score": 33, "level": "Explorateur", "recommendation": "Train team on AI basics"}</pre>
+<strong>Parameters:</strong> has_automation, uses_ai_tools, data_structured, team_trained, has_ai_strategy, budget_allocated, processes_documented, kpis_measured (all boolean)
+</div>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/invoice-calculator</code>
+<h3>Invoice Calculator</h3>
+<p>Calculate invoice total with VAT and discounts.</p>
+<pre>GET /invoice-calculator?days_worked=5&tjm=600&vat_rate=20&discount_percent=10</pre>
+<pre>{"subtotal_eur": 3000, "vat_eur": 540, "total_eur": 3240, "total_formatted": "3,240.00€"}</pre>
+</div>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/project-estimator</code>
+<h3>Project Time Estimator</h3>
+<p>Estimate project duration and quote.</p>
+<pre>GET /project-estimator?complexity=medium&type=ai&features=8</pre>
+<pre>{"estimated_days": 19, "recommended_quote_eur": {"low": 7600, "mid": 11400, "high": 17100}}</pre>
+<strong>Types:</strong> website, mobile, api, ai, automation, saas
+</div>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/pitch-generator</code>
+<h3>Freelance Pitch Generator</h3>
+<p>Generate a 3-sentence freelance pitch.</p>
+<pre>GET /pitch-generator?expertise=AI+consultant&target=PMEs&result=automatiser&lang=fr</pre>
+</div>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/seo-score</code>
+<h3>SEO Score Checker</h3>
+<p>Quick SEO analysis for title, description and content.</p>
+<pre>GET /seo-score?title=Mon+Article&description=Description+longue...&keyword=freelance+ia</pre>
+</div>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/keyword-extractor</code>
+<h3>Keyword Extractor</h3>
+<p>Extract top keywords from any text.</p>
+<pre>GET /keyword-extractor?text=votre+texte+ici</pre>
+</div>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/reading-time</code>
+<h3>Reading Time Calculator</h3>
+<pre>GET /reading-time?text=your+article+text+here</pre>
+</div>
+
+<div class="endpoint">
+<span class="method get">GET</span> <code>/currency-converter</code>
+<h3>Currency Converter (EUR/USD/GBP/CHF/CAD)</h3>
+<pre>GET /currency-converter?amount=1000&from=EUR&to=USD</pre>
+</div>
+
+<h2>Pricing</h2>
+<p><span class="badge">Free</span> 100 calls/day • <span class="badge">Pro $9.99/month</span> Unlimited + priority support</p>
+
+<h2>Use Cases</h2>
+<ul>
+<li>Freelance platforms integrating rate suggestions</li>
+<li>HR tools with AI maturity assessment</li>
+<li>Invoice generation tools</li>
+<li>Content tools with SEO analysis</li>
+</ul>
+
+<p>🛒 <strong><a href="index.html">Also check our AI Freelance Kits (7-9€)</a></strong></p>
+</body>
+</html>
